@@ -12,6 +12,8 @@ namespace Mission6_GarrettAshcroft.Models
         // Second table in the db
         public DbSet<Categories> Categories { get; set; }
 
+
+        // This block would seed the category data, but since it is already in the DB I just commented it out
         /*protected override void OnModelCreating(ModelBuilder modelBuilder) // Seed category data
         {
             modelBuilder.Entity<Categories>().HasData(

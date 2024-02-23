@@ -7,13 +7,13 @@ namespace Mission6_GarrettAshcroft.Models
 {
     public class AddMovie
     {
+        /* Set PK and make this field required*/
         [Key]
         [Required]
         public int MovieId { get; set; }
 
-
+        /* Establish FK relationship with categories table*/
         [ForeignKey("CategoryId")]
-        [Required(ErrorMessage = "Please select a category.")]
         public int? CategoryId { get; set; }
 
         public Categories? Category { get; set; }
@@ -21,6 +21,7 @@ namespace Mission6_GarrettAshcroft.Models
         [Required(ErrorMessage = "A movie title is required.")]
         public string Title { get; set; }
 
+        // Set year range to 1888 or later
         [Required(ErrorMessage = "Year is required")]
         [Range(1888, int.MaxValue, ErrorMessage ="Year must be 1888 or later.")]
         public int Year { get; set; }
